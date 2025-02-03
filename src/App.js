@@ -8,7 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap JS
 import WhatsAppWidget from './components/WhatsAppWidget';
 
 // Import NewsletterPopup Component
-import NewsletterPopup from './components/NewsletterPopup';
+//import NewsletterPopup from './components/NewsletterPopup';
 
 // Lazy load the components
 const Loading = React.lazy(() => import('./components/Loading'));
@@ -116,9 +116,9 @@ function App() {
         </Routes>
       </Suspense>
 
-      {/* Add the Newsletter Popup here */}
-      <NewsletterPopup />
-
+      {/* Add the Newsletter Popup here  //<NewsletterPopup />
+*/}
+      
       <WhatsAppWidget /> {/* Add the WhatsApp widget here */}
 
       <div

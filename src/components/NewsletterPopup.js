@@ -22,7 +22,7 @@ const NewsletterPopup = () => {
     setIsLoading(true);
     setError('');
 
-    const API_KEY = 'd8691ad46833065b4b59790be33e4991-us19'; // Replace with your Mailchimp API Key
+    const API_KEY = '6073eecbf22948824e78a196946c635d-us19'; // Replace with your Mailchimp API Key
     const LIST_ID = 'a110b820aa'; // Replace with your Mailchimp List ID
     const DC = 'us19'; // Replace with your Mailchimp data center (e.g., us19)
 
@@ -44,12 +44,16 @@ const NewsletterPopup = () => {
 
     try {
       const response = await fetch(endpoint, options);
+      const responseData = await response.json(); // Get the response data
+      console.log('Mailchimp Response:', responseData); // Log the response data
+
       if (response.ok) {
         setIsSubscribed(true);
       } else {
-        throw new Error('Subscription failed');
+        setError(`Subscription failed: ${responseData.detail || 'Unknown error'}`); // Provide more detailed error
       }
     } catch (err) {
+      console.error('Error:', err); // Log any network or other errors
       setError('There was an error subscribing, please try again.');
     } finally {
       setIsLoading(false);
