@@ -1,0 +1,1705 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+  
+  /* All */
+  html, body {
+    height: 100%;
+    background-image: url('/public/header.webp'); /* Background image */
+    background-size: cover; /* Makes sure the background image covers the entire area */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating the background image */
+    font-family: 'Quattrocento Sans', sans-serif; /* Or any other font you prefer */
+    cursor: none; /* Hides the default cursor */
+    background-color: #181818!important;
+  }
+    /* Navbar */
+.navbar-cursor {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 9999; /* Place the cursor above most elements */
+}
+
+.navbar-cursor.hovering {
+  transform: scale(2.5); /* Enlarge cursor on hover */
+  background-color: rgba(255, 255, 255, 0.4); /* Brighter color on hover */
+}
+
+
+.navbar-brand,
+.nav-link {
+  font-size: 0.8rem!important;
+  color: #fff!important;
+  transition: color 0.3s ease, z-index 0.2s ease;
+  position: relative; /* Ensure the link is above the cursor */
+  z-index: 1; /* Bring links above the cursor */
+  font-weight: bold!important;
+  padding:20px!important;
+  margin:10px;
+}
+
+.nav-link:hover {
+  color: #00ffdd!important;
+  font-weight: bold!important;
+}
+
+.sticky {
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+  
+  /* Header*/
+  .header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center;     /* Vertically centers the text */
+    height: 70vh;            /* Full height of the viewport */
+
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0; /* Remove margin from p to bring it closer to h1 */
+    font-weight: 800;
+  }
+  .header p {
+    font-size: 1.2rem;
+    color: #860324;
+    margin: -40px 0; /* Remove margin from p to bring it closer to h1 */
+    font-weight: 600;
+    padding: 10px 20px; /* Add padding for spacing inside the <p> tag */
+    position: relative; /* Necessary for positioning pseudo-elements */
+    display: inline-block; /* Necessary to allow pseudo-elements to be placed next to the <p> tag */
+    font-weight: 700;
+  }
+  
+  
+  .header p::before, .header p::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Align the lines to the middle of the <p> tag */
+    transform: translateY(-50%); /* Correctly center the lines vertically */
+    height: 2px; /* Thickness of the line */
+    width: 30px; /* Length of the line */
+    background-color: #860324; /* Blue color for the line */
+  }
+  
+  .header p::before {
+    left: -20px; /* Position the line on the left side */
+  }
+  
+  .header p::after {
+    right: -20px; /* Position the line on the right side */
+  }
+
+
+
+
+
+
+
+  
+  /* Services */
+.service-container {
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-color: #181818!important;
+  }
+  
+  .service-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .service-header h2 {
+    font-size: 2.5rem;
+    color: #fff!important;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: -100px;
+    width: 80%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* Positioning context for the corners */
+    z-index: 1; /* Make sure the main section is above the corners */
+border: none !important;
+  }
+
+
+   .service-column {
+    width: 30%;;
+    border: none !important;
+
+    position: relative; /* To ensure the columns stay on top of the corners */
+    height:300px;
+    background-color: #212121!important;
+  }
+  
+
+  .service-column h2 {
+    font-size: 1.8rem;
+    color: #ffffff!important;
+  }
+  
+  .service-column p {
+    font-size: 1rem;
+    color: #ffffff!important;
+  }
+ 
+.service-container {
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.service-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.service-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  margin-top: -100px;
+  width: 80%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* Positioning context for the corners */
+  z-index: 1; /* Make sure the main section is above the corners */
+}
+.service-column {
+  width: 30%;
+  background-color: #e6e6e6;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* To ensure the columns stay on top of the corners */
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  height:380px;
+  text-align: center; /* Horizontally center the icon */
+}
+
+.service-column h2 {
+  font-size: 1.3rem;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.service-column p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 2;
+}
+
+.custom-icon {
+  font-size: 40px;
+  color: #860324; /* Tomato color */
+  margin-right: 10px;
+  display: inline-block; /* Make it behave like inline content */
+  text-align: center;
+  padding:30px 0 20px 0;
+}
+/* Mobile view (for screens smaller than 768px) */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column; /* Stack the columns vertically */
+    width: 100%; /* Ensure the columns take full width */
+    margin-top: 0; /* Reset the top margin */
+  }
+
+  .service-column {
+    width: 100%; /* Each column takes up full width on mobile */
+    height: auto; /* Let height adjust based on content */
+    margin-bottom: 20px; /* Add space between the columns */
+    box-shadow: none; /* Remove box shadow for a cleaner look on small screens */
+  }
+
+  .service-header h2 {
+    font-size: 2rem; /* Adjust font size for mobile */
+  }
+
+  .service-column h2 {
+    font-size: 1.5rem; /* Adjust font size for mobile */
+  }
+
+  .service-column p {
+    font-size: 0.9rem; /* Adjust font size for mobile */
+  }
+}
+
+/* Extra small mobile view (for screens smaller than 480px) */
+@media (max-width: 480px) {
+  .service-header h2 {
+    font-size: 1.8rem; /* Further reduce font size for smaller screens */
+  }
+
+  .service-column h2 {
+    font-size: 1.3rem; /* Further reduce font size for smaller screens */
+  }
+
+  .service-column p {
+    font-size: 0.8rem; /* Further reduce font size for smaller screens */
+  }
+
+  .custom-icon {
+    font-size: 30px; /* Adjust icon size for mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About */
+.wrapper {
+  position: relative;
+  width: 80%;
+  height: 500px;
+  margin: 100px auto;
+  background: url('/public/about.webp');
+  background-position: 90% 50%;
+}
+
+.content {
+  position: absolute;
+  right: 20px;
+  top: -50px;
+  width: 50%;
+  height: 100%;
+  padding: 30px;
+  background: #212121;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(150, 5, 5, 0.5);
+}
+
+.content h2 {
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+.content p {
+  color: #fff;
+  line-height: 2;
+}
+
+.about-title {
+  color: #860324!important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  transform: translateY(-50%); /* Correctly center the lines vertically */
+  height: 2px; /* Thickness of the line */
+  width: 30px; /* Length of the line */
+  background-color: #860324; /* Blue color for the line */
+}
+
+.about-title::after {
+  top: 45px; /* Position the line on the right side */
+  left: -1px;
+}
+
+.about-button {
+  background-color: #e6e6e6;
+  padding: 10px 30px 10px 20px;
+  border: none;
+}
+
+.about-button:hover {
+  background-color: #860324;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(150, 5, 5, 0.5);
+}
+
+/* Mobile view (for screens smaller than 768px) */
+@media (max-width: 768px) {
+  /* Hide the image */
+  .wrapper {
+    background: none; /* Remove the background image */
+    height: auto; /* Let height adjust based on content */
+    margin-top:-10px
+  }
+
+  .content {
+    width: 100%; /* Make the content take up full width on mobile */
+    padding: 20px; /* Adjust padding for mobile */
+    position: relative; /* Reset positioning */
+    top: 0; /* Reset the top offset */
+    right: 0; /* Reset the right offset */
+    margin-top: 30px; /* Add some space at the top */
+  }
+
+  .content h2 {
+    font-size: 1.5em; /* Adjust font size for mobile */
+  }
+
+  .about-title {
+    font-size: 1.3em; /* Adjust title font size for mobile */
+  }
+
+  .about-button {
+    padding: 10px 20px; /* Adjust padding for mobile */
+  }
+}
+
+/* Extra small mobile view (for screens smaller than 480px) */
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: 1.2em; /* Further reduce font size for smaller screens */
+  }
+
+  .about-title {
+    font-size: 1.1em; /* Further reduce title font size for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Portfolio */
+.portfolio-section {
+  padding: 50px 20px;
+  border-top: 1px solid #212121;
+}
+
+.portfolio-image {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-header {
+  font-size: 1.2rem;
+  color: #860324;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  padding-bottom: 20px; /* Space for scroll */
+}
+
+.portfolio-item {
+  width: 100%; /* Make each item take full width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-right: 20px; /* Space between items */
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item-button {
+  background-color: #e6e6e6;
+  padding: 10px 30px 10px 30px;
+  border: none;
+  margin-top: 20px;
+}
+
+.portfolio-item-button:hover {
+  background-color: #860324;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(150, 5, 5, 0.5);
+}
+
+.portfolio-item-title {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  font-weight: 700;
+}
+
+.profile-button {
+  padding: 0 20px 30px 20px;
+}
+
+.profile-item-button:hover {
+  background-color: #860324;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(150, 5, 5, 0.5);
+}
+
+.portfolio-item-description {
+  font-size: 0.9rem;
+  color: #9e9a9a;
+  padding: 0 20px;
+}
+
+.portfolio-item-tag {
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: 10px 0 0 20px;
+  text-transform: uppercase;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-btn {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mobile view (for screens smaller than 768px) */
+@media (max-width: 768px) {
+  .portfolio-title {
+    font-size: 1.5rem; /* Adjust font size for mobile */
+    padding: 0 10px; /* Adjust padding for mobile */
+  }
+
+  .portfolio-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .portfolio-item {
+    width: 250px; /* Adjust width to fit more items */
+    flex-shrink: 0; /* Prevent items from shrinking too much */
+    scroll-snap-align: start;
+  }
+
+  .portfolio-item-title {
+    font-size: 1.1rem; /* Reduce title font size on mobile */
+    padding: 0 10px; /* Adjust padding for mobile */
+  }
+
+  .portfolio-item-description {
+    font-size: 0.8rem; /* Adjust description font size for mobile */
+  }
+
+  .portfolio-item-button {
+    padding: 10px 20px; /* Adjust button padding for mobile */
+  }
+}
+
+/* Extra small mobile view (for screens smaller than 480px) */
+@media (max-width: 480px) {
+  .portfolio-title {
+    font-size: 1.2rem; /* Further reduce font size for smaller screens */
+  }
+  .portfolio-grid {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .portfolio-item {
+    width: 80%; /* Make sure items fit well on smaller screens */
+  }
+  .portfolio-item-title {
+    font-size: 1rem; /* Further reduce title font size for smaller screens */
+  }
+
+  .portfolio-item-description {
+    font-size: 0.7rem; /* Further adjust description font size for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Feedback */
+.feedback {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 1.3em;
+  background-image: url('https://images.unsplash.com/photo-1568781269551-3e3baf5ec909?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.feedback-container {
+  background: #1abc9c;
+  color: white;
+  background-image: url('https://images.unsplash.com/photo-1566729318297-fa13d254fab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc5fHx3ZWIlMjBkZXYlMjBhYnN0cmFjdHxlbnwwfHwwfHx8MA%3D%3D'); /* Ensure the correct path */
+  height: 70vh; /* Full height of the viewport */
+  background-size: cover; /* Ensures the background image covers the circle */
+  background-position: center; /* Center the background image */
+  margin: 0 0 100px 0;
+}
+
+.feedback-box {
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 80% opacity */
+  color: white; /* White text color for contrast */
+  padding: 20px; /* Add padding for better readability */
+  width: 50%; /* Occupies the right half of the screen */
+  height: 70vh; /* Full height of the viewport */
+  padding: 60px;
+  margin: 0 0 0 150px;
+}
+
+.feedback-title {
+  margin-top: 0;
+  font-size: 2.2em; /* Adjust size as needed */
+  padding: 10px;
+  font-weight: bold;
+}
+
+.feedback-text {
+  line-height: 2; /* Improve readability */
+  padding: 10px;
+  font-size: 1em; /* Adjust size as needed */
+}
+
+/* Mobile view (for screens smaller than 768px) */
+@media (max-width: 768px) {
+  .feedback {
+    padding: 40px 20px; /* Reduce padding for mobile */
+    font-size: 1.1em; /* Reduce font size for mobile */
+  }
+
+  .feedback-container {
+    height: auto; /* Allow content to dictate height */
+    background-size: cover; /* Keep the background image covering */
+    background-position: center;
+    padding: 20px; /* Add padding for better readability */
+  }
+
+  .feedback-box {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Adjust height based on content */
+    margin: 20px 0; /* Remove left margin */
+    padding: 20px; /* Reduce padding for mobile */
+  }
+
+  .feedback-title {
+    font-size: 1.8em; /* Smaller font size for mobile */
+    padding: 5px;
+  }
+
+  .feedback-text {
+    font-size: 0.9em; /* Smaller text for mobile */
+    padding: 5px;
+  }
+}
+
+/* Extra small mobile view (for screens smaller than 480px) */
+@media (max-width: 480px) {
+  .feedback {
+    padding: 20px 10px; /* Further reduce padding for very small screens */
+    font-size: 1em; /* Further reduce font size for very small screens */
+  }
+
+  .feedback-title {
+    font-size: 1.6em; /* Further reduce title font size */
+  }
+
+  .feedback-text {
+    font-size: 0.85em; /* Further adjust text size */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* testimonial */
+.app{
+  margin:0 0 100px 0;
+
+}
+.slider-main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 50vh;
+  color: slategray;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.nav-left, .nav-right {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #860324;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.review-card {
+  display: none;
+  transition: transform 0.5s ease;
+}
+
+.review-card.active {
+  display: block;
+  transform: translateY(0);
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background: rgb(73, 73, 73);
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.dots span.active {
+  background: #860324;
+  transform: scale(1.5);
+}
+
+.details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: gray;
+}
+.testimonial-header{
+  text-align: center;
+  font-size: 1.2rem;
+  color: #860324;
+margin:5px 0 0 0;
+font-weight: 700;
+} 
+
+.testimonial-title{
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin:0 0 -50px 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BlogPage.css */
+
+.blog-container {
+  width: 80%;
+  margin: 0 auto; /* Center horizontally */
+  border-radius: 8px; /* Optional: For rounded edges */
+  padding-top: 50px;
+  margin-bottom: 100px;
+  border-top: 1px solid #212121;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+}
+
+.blog-image {
+  width: 100%;
+  object-fit: cover;
+  height: 60vh;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: space-between; /* Pushes items to top and bottom */
+  align-items: flex-start;
+  padding: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  color: #fff;
+}
+
+.day {
+  font-size: 1.9rem;
+  color: #860324;
+  font-weight: bold;
+}
+
+.month {
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.date-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: auto; /* Pushes date to the top */
+}
+
+.tag {
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.post-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.blog-excerpt {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.blog-header {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #860324;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.blog-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: -10px 0 50px 0;
+}
+
+/* Mobile View Optimization */
+@media (max-width: 768px) {
+  .blog-container {
+    width: 90%;
+    padding-top: 30px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 10px;
+  }
+
+  .blog-card {
+    margin-bottom: 20px; /* Space between blog cards */
+  }
+
+  .blog-image {
+    height: 50vh; /* Adjust height of images for smaller screens */
+  }
+
+  .overlay-content {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .day {
+    font-size: 1.6rem; /* Smaller day font */
+  }
+
+  .month {
+    font-size: 0.8rem; /* Smaller month font */
+  }
+
+  .post-title {
+    font-size: 1.2rem; /* Smaller post title */
+  }
+
+  .card-content {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .blog-excerpt {
+    font-size: 0.9rem; /* Slightly smaller excerpt */
+  }
+
+  .blog-header {
+    font-size: 1rem; /* Smaller blog header font */
+  }
+
+  .blog-title {
+    font-size: 1.6rem; /* Smaller title on mobile */
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer*/
+@media screen and (max-width: 767.98px) {
+  body > .btn.icon {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 99;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.section {
+  background-color: var(--bg-color);
+}
+
+.section.footer {
+  padding: 20px 10vw;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1239.98px) {
+  .section.footer {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .section.footer {
+    padding: 20px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-top:1px solid #212121
+}
+
+.footer__list {
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767.98px) {
+  .footer__list {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__item {
+  width: 100%;
+  flex: 1 1 calc(100% / 6);
+}
+
+.footer__item.active .footer__link {
+  color: var(--link-active-color);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 767.98px) {
+  .footer__item {
+    flex: 1 1 calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 463.98px) {
+  .footer__item {
+    flex: 1 1 calc(100% / 2);
+  }
+}
+
+.footer__link {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--link-color);
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer__link:hover {
+  color: var(--link-hover-color);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.footer__link:active {
+  color: var(--link-active-color);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.footer__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+@media screen and (max-width: 767.98px) {
+  .footer__header {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__logo {
+  @media screen and (max-width: 767.98px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footer__copyright {
+  width: 100%;
+  border-top: 1px solid var(--footer-border-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn.icon {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--btn-icon-bg-color);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--btn-icon-shadow-color);
+}
+
+.btn.icon::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn.icon:hover::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  border: 2px solid var(--btn-icon-border-color);
+  border-radius: 50%;
+  animation: ripple 1s ease-out infinite;
+  z-index: 0;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.btn.icon:hover .icon {
+  transform: scale(1.2);
+}
+
+.btn.social {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  background-color: var(--btn-social-bg-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.btn.social:hover .icon {
+  transform: scale(1.2) rotate(360deg);
+}
+
+.btn.social::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--btn-social-border-color);
+  z-index: 0;
+  transform: scale(1);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.btn.social:hover::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  min-height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.icon.drop-up {
+  background: url(https://ig-launch.test-project.pp.ua/img/drop-up.svg) no-repeat 50% 50% / contain;
+}
+
+.icon.twitter {
+  background: url('/public/icons/youtube.svg') no-repeat 50% 50% / contain;
+}
+
+.icon.youtube {
+  background: url('/public/icons/linkedin.svg') no-repeat 50% 50% / contain;
+}
+
+.icon.telegram {
+  background: url('/public/icons/facebook.svg') no-repeat 50% 50% / contain;
+}
+
+.icon.whatsapp {
+  background: url('/public/icons/whatsapp.svg') no-repeat 50% 50% / contain;
+}
+
+
+
+
+
+
+
+
+
+/* ContactUs.css */
+.contact-footer {
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-direction: row-reverse; /* Ensure map and contact info are on the right */
+}
+
+.info-container {
+  width: 48%; /* Right column with address, email, phone, and map */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-container {
+  width: 48%; /* Left column with the contact form */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 20px;
+}
+
+.map {
+  border-radius: 10px;
+  width: 100%;
+  height: 250px; /* Adjust map size */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid #860324; /* Add a red bottom border */
+  background-color: transparent!important; /* Removed the background color */
+}
+
+.form-input {
+  padding: 0.8rem;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 1rem;
+  border-bottom: 1px solid #860324; /* Add a red bottom border */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #860324; /* Focused input field border color */
+}
+
+textarea {
+  background-color: transparent!important; /* Removed the background color */
+  border: none!important;
+}
+
+.submit-btn {
+  background-color: #860324;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #570b1e;
+}
+
+.contact-details {
+  margin-top: 2rem;
+}
+
+.contact-details p {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  text-align: left;
+}
+
+/* Make sure layout adjusts well for smaller screens */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .info-container,
+  .form-container {
+    width: 100%; /* Full width for mobile view */
+  }
+
+  .form-group {
+    flex-direction: column; /* Stack email and phone fields vertically */
+  }
+}
+
+/* Remove labels and add placeholders to the form */
+.contact-form .form-group input {
+  border: none;
+  background: transparent; /* Remove background color */
+}
+
+.contact-form .form-group input[placeholder]:focus {
+  border: 1px solid #860324;
+}
+
+
+
+
+
+
+/* Overlay background for the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Darkened background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure the popup is on top */
+}
+
+/* Centered popup container */
+.popup-container {
+  background-color: #181818;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+/* Popup Title */
+.popup-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+  padding:10px 0;
+}
+
+/* Popup Description */
+.popup-text {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: white;
+  
+}
+
+/* Email input */
+.popup-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: transparent!important; /* Removed the background color */
+  border-top: none!important;
+  border-left: none!important;
+  border-right: none!important;
+  border-bottom: 1px solid #860324; /* Add a red bottom border */
+}
+
+/* Submit button */
+.popup-submit {
+  padding: 10px 20px;
+  background-color: #860324;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-submit:hover {
+  background-color: #500b1c;
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+.popup-close:hover {
+  color: red;
+}
+
+/* Error message */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Make sure layout adjusts well for smaller screens */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .info-container,
+  .form-container {
+    width: 100%; /* Full width for mobile view */
+  }
+
+  .form-group {
+    flex-direction: column; /* Stack email and phone fields vertically */
+  }
+}
+
+/* Remove labels and add placeholders to the form */
+.contact-form .form-group input {
+  border: none;
+  background: transparent; /* Remove background color */
+}
+
+.contact-form .form-group input[placeholder]:focus {
+  border: 1px solid #860324;
+}
+
+/* Overlay background for the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Additional responsive styles */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+  }
+
+  .navbar-item {
+    margin-bottom: 1rem; /* Add space between navbar items */
+  }
+.contact-footer,   .portfolio-section, .service-container {
+  margin-top:-100px
+}
+.blog-container, .about-container .app, .about-container{
+  margin-top:-70px
+}
+.header {
+
+  height: 30vh;            /* Full height of the viewport */
+
+  text-align: center;
+}
+  .header p{
+    font-size: 0.9em;
+    margin-top: -160px;
+  }
+  .header h1{
+    font-size: 1.3em;
+  }
+  .services,
+  .portfolio,
+  .testimonials {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .footer {
+    text-align: center; /* Center align footer text */
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .contact-form {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 1rem; /* Add space between form groups */
+  }
+
+  .contact-form .form-group input {
+    width: 100%; /* Full width for input fields */
+  }
+
+  .contact-form .form-group button {
+    width: 100%; /* Full width for submit button */
+  }
+}
+
+/* General responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem; /* Reduce container padding */
+  }
+
+  .row {
+    flex-direction: column; /* Stack rows vertically */
+  }
+
+  .col {
+    width: 100%; /* Full width for columns */
+  }
+
+  .section {
+    padding: 2rem 1rem; /* Adjust section padding */
+  }
+
+  .section-title {
+    font-size: 1.5rem; /* Adjust section title font size */
+  }
+
+  .section-content {
+    font-size: 1rem; /* Adjust section content font size */
+  }
+
+  .button {
+    width: 100%; /* Full width for buttons */
+    margin-bottom: 1rem; /* Add space between buttons */
+  }
+
+  .image {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
